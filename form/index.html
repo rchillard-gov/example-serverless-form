@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Description" content="U.S. Small Business Administration's contact us to provide feedback form">
+        <title>SBA Contact Us Form</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+        <header>
+            <a href="https://www.sba.gov"><img id="agency" src="agency-logo.png" alt="SBA Logo"></a>
+            <a id="office" href="https://www.sba.gov/about-sba/sba-locations/headquarters-offices">Offices</a>
+        </header>
+        <main>
+            <h1>Contact Us</h1>
+            <p>Use this form to contact the Small Business Administration (SBA) and provide feedback on your experience.</p>
+            <form action="https://ltpvq4hrb0.execute-api.us-east-1.amazonaws.com/default/lower-oig-complaint-form-receiver" method="POST">
+                <h2>Contact Information</h2>
+                <p>What is your relationship to the Small Business Administration?</p>
+                <label><input type="radio" name="status" value="public" checked="checked">Member of the Public</label>
+                <label><input type="radio" name="status" value="contractor">SBA Contractor</label>
+                <label><input type="radio" name="status" value="employee">SBA Employee</label>
+                <label><input type="radio" name="status" value="decline">Decline to Answer</label>
+                <label><input type="radio" name="status" value="other">Other</label>
+                <br>
+                <label><input id="anonymous" type="checkbox">I choose to remain anonymous. I do not wish to provide my name in connection with this feedback.</label>
+                <br>
+                <div class="form-fields" id="contact-details">
+                    <label for="first-name">First Name</label>
+                    <input id="first-name" type="text" name="first-name">
+                    <label for="last-name">Last Name</label>
+                    <input id="last-name" type="text" name="last-name">
+                    <label for="address-street">Street Address</label>
+                    <input id="address-street" type="text" name="address-street">
+                    <label for="address-city">City</label>
+                    <input id="address-city" type="text" name="address-city">
+                    <label for="address-state">State</label>
+                    <input id="address-state" type="text" name="address-state">
+                    <label for="address-zip">Zipcode</label>
+                    <input id="address-zip" type="text" pattern="[0-9]{5}" name="address-zip">
+                    <label for="phone">Phone</label>
+                    <input id="phone" type="tel" name="phone">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email">
+                </div>
+                <hr>
+                <h2>Feedback</h2>
+                <p>Date of Feedback: <span id="date">MM/DD/YYYY</span></p>
+                <label>SBA Program Type
+                    <select name="sba-program">
+                        <option value="counseling">Business Counseling</option>
+                        <option value="contracting">Government Contracting</option>
+                        <option value="investment">Investment and Innovation</option>
+                        <option value="loan-business">Loan (Business)</option>
+                        <option value="loan-disaster">Loan (Disaster)</option>
+                        <option value="sba-employee-integrity">SBA Employee Integrity</option>
+                        <option value="other">Other (Please specify in feedback)</option>
+                    </select>
+                </label>
+                <p>
+                    Note: If you would like to provide specific feedback on staff, please include their names in the section below. 
+                </p>
+                <textarea name="feedback" rows="10"></textarea>
+                <p>Have you reported this feedback in any other way?</p>
+                <label><input id="reported" type="radio" name="reported" value="yes">Yes</label>
+                <label><input id="unreported" type="radio" name="reported" value="no">No</label>
+                <div class="form-fields hidden" id="extra-questions">
+                    <label for="previous-report-office-name">Reported to Office</label> 
+                    <input id="previous-report-office-name" type="text" name="previous-report-office-name">
+                    <label for="previous-report-date-time">When Reported</label> 
+                    <input id="previous-report-date-time" type="date" name="previous-report-date-time">
+                    <label for="previous-report-status">Status </label> 
+                    <input id="previous-report-status" type="text" name="previous-report-status">
+                </div>
+                <br>
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </main>
+        <footer>
+            <a href="https://www.sba.gov/about-sba/sba-locations/headquarters-offices">U.S. Small Business Administration</a> | (800) 827-5722 | 409 3rd St, SW. Washington, DC 20416
+        </footer>
+        <script src="index.js"></script>
+    </body>
+</html>

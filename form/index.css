@@ -1,0 +1,147 @@
+body {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-areas:
+      ". header ."
+      ". main ."
+      "footer footer footer";
+    font-family: "Source Sans Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 18px;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+    justify-self: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    text-align: left;
+}
+
+a {
+    color: #002e6d;
+}
+
+h1, h2, h3 {
+    color: #002e6d;
+}
+
+input {
+    margin-bottom: 0.25rem;
+}
+
+input[type=submit] {
+    background-color: #002e6d;
+    color: white;
+    font-size: 1.2rem;
+    padding: .8rem;
+}
+
+label {
+    display: block;
+    padding-bottom: .25rem;
+}
+
+textarea {
+    width: 100%;
+}
+
+.form-fields {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    justify-items: start;
+    row-gap: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#agency {
+    float: left;
+    padding: 1rem;
+}
+
+#feedback-narrative {
+    color: #002e6d;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+#office {
+    color: #002e6d;
+    float: right;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    body {
+        grid-template-columns: 3% 94% 3%;
+    }
+
+    #agency {
+        width: 140px;
+    }
+
+    #office {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body {
+        grid-template-columns: 5% 90% 5%;
+    }
+
+    #agency {
+        width: 175px;
+    }
+
+    #office {
+        font-size: 1.3rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body {
+        grid-template-columns: 12.5% 75% 12.5%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        grid-template-columns: 20% 60% 20%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {
+        grid-template-columns: 25% 50% 25%;
+    }
+
+    #agency {
+        width: 193px;
+    }
+
+    #office {
+        font-size: 1.4rem;
+    }
+}
